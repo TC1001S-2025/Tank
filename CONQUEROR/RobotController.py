@@ -68,23 +68,28 @@ class RobotController:
     def __init__(self):
         self.sketch_manager = ArduinoSketchManager()
 
-    def move_forward(self, duration=3, power=128):
+    def move_forward(self, duration=2, power=128):
         """Ordena al robot moverse hacia adelante."""
         self.sketch_manager.add_movement("MOVE_BACK", duration, power)
 
-    def move_backward(self, duration=3, power=128):
+
+    def move_backward(self, duration=2, power=128):
         """Ordena al robot moverse hacia atrás."""
         self.sketch_manager.add_movement("MOVE_FORWARD", duration, power)
 
-    def turn_left(self, duration=2, power=100):
+    def turn_left(self, duration=0.5, power=100):
+        self.stop()
         """Ordena al robot girar a la izquierda."""
         self.sketch_manager.add_movement("TURN_LEFT", duration, power)
+        
 
-    def turn_right(self, duration=2, power=100):
+    def turn_right(self, duration=0.5, power=90):
+        self.stop()
         """Ordena al robot girar a la derecha."""
         self.sketch_manager.add_movement("TURN_RIGHT", duration, power)
+        
 
-    def stop(self, duration = 2, power = 50):
+    def stop(self, duration = 1, power = 50):
         """Ordena al robot detenerse."""
         self.sketch_manager.add_movement("FULL_STOP", duration, power)
 

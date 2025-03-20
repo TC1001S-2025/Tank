@@ -1,0 +1,25 @@
+from RobotController import RobotController
+
+robot = RobotController()
+
+robot.stop()
+robot.move_forward()
+robot.turn_right()
+robot.move_forward()
+robot.turn_right()
+robot.stop()
+robot.move_forward()
+robot.turn_right()
+robot.stop()
+robot.move_forward()
+robot.turn_right()
+robot.stop()
+robot.move_forward()
+robot.turn_right()
+robot.turn_right()
+robot.move_forward()
+robot.move_forward()
+robot.stop()
+
+robot.sketch_manager.finalize_sketch()
+robot.upload_sketch()
