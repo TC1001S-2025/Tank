@@ -157,7 +157,8 @@ class RobotController:
         arduino.compile(fqbn="arduino:avr:uno", sketch=self.sketch_manager.sketch_path)
         arduino.upload(fqbn="arduino:avr:uno", sketch=self.sketch_manager.sketch_path, port=port)
 
-    def _detect_serial_port(self):
+    def _detect_serial_port(
+            self):
         """Detecta automáticamente un puerto serial disponible.
 
         Returns:
